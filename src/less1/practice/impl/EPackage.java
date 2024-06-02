@@ -1,11 +1,11 @@
 package less1.practice.impl;
 
-public enum Package {
+public enum EPackage {
     PlASTIC("пластик"), GLASS("стекло");
 
     private  final  String material;
 
-    Package(String material) {
+    EPackage(String material) {
         this.material = material;
     }
 
