@@ -5,13 +5,12 @@ import less1.practice.VendingMachine;
 
 import java.util.List;
 
-public class WaterVendingMachine extends VendingMachine {
-    public WaterVendingMachine() {
+public class HotDrinkVendingMachine extends VendingMachine {
+
+    public HotDrinkVendingMachine() {
     }
 
-    public WaterVendingMachine(List<Product> products) {
+    public HotDrinkVendingMachine(List<Product> products) {
         super(products);
     }
-
-
 }

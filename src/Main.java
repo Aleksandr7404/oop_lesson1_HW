@@ -1,7 +1,6 @@
 import less1.practice.Product;
 import less1.practice.VendingMachine;
-import less1.practice.impl.BootleOffWater;
-import less1.practice.impl.EPackage;
+import less1.practice.impl.*;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -9,16 +8,19 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Product bottle1 = new BootleOffWater("Родники", 55, LocalDate.of(2024, 5, 1));
-        Product bottle2 = new BootleOffWater("Родники Газ", 55, LocalDate.of(2024, 5, 1),
-                true, EPackage.GLASS.getMaterial(), 0.5F );
 
-        VendingMachine vm = new VendingMachine();
-        System.out.println(vm.getProducts());
-        vm.addProducts(List.of(bottle1, bottle1, bottle2, bottle1, bottle2));
-        System.out.println(vm.getProducts());
-        vm.getProduct("Родники");
-        System.out.println(vm.getProducts());
+        Product hotdrink1 = new HotDrink("Капучино", 200,LocalDate.of(2024, 6,3),
+                95, TypeHotDrink.COFFEE.getDrink(), 0.25F);
+        Product hotdrink2 = new HotDrink("Зеленый",50, LocalDate.of(2024,6,3),
+                95, TypeHotDrink.TEA.getDrink(),0.3F);
+
+
+        VendingMachine vmHD = new HotDrinkVendingMachine();
+        System.out.println(vmHD.getProducts());
+        vmHD.addProducts(List.of(hotdrink1, hotdrink2, hotdrink2, hotdrink1));
+        System.out.println(vmHD.getProducts());
+        vmHD.getProduct("Капучино", 0.25F, 95);
+        System.out.println(vmHD.getProducts());
 
     }
 }
